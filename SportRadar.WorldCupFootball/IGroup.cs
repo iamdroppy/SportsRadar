@@ -44,23 +44,3 @@ public interface IGroup
     /// <returns>An array of countries, ordered by rank.</returns>
     public IMatch[] Rank();
 }
-
-/// <inheritdocs/>
-internal class Group([NotNull] string name)
-    : IGroup
-{
-    /// <inheritdocs/>
-    public string Name { get; } = name ?? throw new ArgumentNullException(nameof(name));
-
-    /// <inheritdocs/>
-    public IGroup AddCountry([NotNull] ICountry country) => throw new NotImplementedException();
-
-    /// <inheritdocs/>
-    public IGroup RemoveCountry([NotNull] ICountry country) => throw new NotImplementedException();
-    
-    /// <inheritdocs/>
-    public IEnumerable<IMatch> Mix() => throw new NotImplementedException();
-    
-    /// <inheritdocs/>
-    public IMatch[] Rank() => throw new NotImplementedException();
-}
