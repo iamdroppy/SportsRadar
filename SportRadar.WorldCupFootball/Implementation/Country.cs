@@ -3,7 +3,7 @@ using System.Diagnostics.CodeAnalysis;
 namespace SportRadar.WorldCupFootball.Implementation;
 
 /// <inheritdocs/>
-internal class Country([NotNull] string name, [NotNull] string code, float strengthMultiplier)
+public class Country([NotNull] string name, [NotNull] string code)
     : ICountry
 {
     /// <inheritdocs/>
@@ -11,9 +11,6 @@ internal class Country([NotNull] string name, [NotNull] string code, float stren
 
     /// <inheritdocs/>
     public string Code { get; } = code ?? throw new ArgumentNullException(nameof(code));
-
-    /// <inheritdocs/>
-    public float StrengthMultiplier { get; } = strengthMultiplier;
 
     /// <inheritdoc/>
     public int Losses { get; private set; }
@@ -43,10 +40,16 @@ internal class Country([NotNull] string name, [NotNull] string code, float stren
     public void AddDraw() => Draws++;
 
     /// <inheritdoc/>
-    public void AddGoalFor() => GoalsFor++;
+    public void AddGoalFor(int goals = 1)
+    {
+        GoalsFor += goals;
+    }
 
     /// <inheritdoc/>
-    public void AddGoalAgainst() => GoalsAgainst++;
+    public void AddGoalAgainst(int goals = 1)
+    {
+        GoalsAgainst += goals;
+    }
     
     /// <summary>
     /// Compares the current instance with another object of the same type and returns an integer that indicates whether the current instance precedes, follows, or occurs in the same position in the sort order as the other object.

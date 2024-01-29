@@ -33,14 +33,8 @@ public interface IGroup
     IGroup RemoveCountry([NotNull] ICountry country);
     
     /// <summary>
-    /// Generates a set of matches within the group.
+    /// Generates a set of matches within the group and gives them random scores.
     /// </summary>
     /// <returns>An enumerable of matches.</returns>
     IEnumerable<IMatch> Mix();
-    
-    /// <summary>
-    /// Rank the countries in the group.
-    /// </summary>
-    /// <returns>An array of countries, ordered by rank.</returns>
-    public IMatch[] Rank();
 }

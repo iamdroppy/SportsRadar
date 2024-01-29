@@ -39,10 +39,10 @@ public interface IMatch
     /// <summary>
     /// Records a goal for the home country.
     /// </summary>
-    void HomeGoal();
+    void HomeGoal(int goals = 1);
 
     /// <summary>
     /// Records a goal for the away country.
     /// </summary>
-    void AwayGoal();
+    void AwayGoal(int goals = 1);
 }

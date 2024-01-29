@@ -6,7 +6,7 @@ public static class ServiceExpose
 {
     public static IServiceCollection AddWorldCupFootball(this IServiceCollection services)
     {
-        services.AddSingleton<ICountry, Country>();
+        services.AddSingleton<IGroup, Group>();
         return services;
     }
 }

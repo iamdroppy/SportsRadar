@@ -19,10 +19,20 @@ internal class Match([NotNull] ICountry home, [NotNull] ICountry away)
     public int AwayScore { get; private set; }
 
     /// <inheritdocs/>
-    public void HomeGoal() => HomeScore++;
+    public void HomeGoal(int goals = 1)
+    {
+        HomeScore += goals;
+        Home.AddGoalFor(goals);
+        Away.AddGoalAgainst(goals);
+    }
 
     /// <inheritdocs/>
-    public void AwayGoal() => AwayScore++;
+    public void AwayGoal(int goals = 1)
+    {
+        AwayScore += goals;
+        Away.AddGoalFor(goals);
+        Home.AddGoalAgainst(goals);
+    }
 
     public override string ToString() => $"{Home.Name} {HomeScore} - {AwayScore} {Away.Name}";
 }

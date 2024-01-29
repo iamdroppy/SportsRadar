@@ -79,10 +79,10 @@ public interface ICountry : IComparable<ICountry>
     /// <summary>
     /// Adds a goal for to the country's goals.
     /// </summary>
-    void AddGoalFor();
+    void AddGoalFor(int goals = 1);
 
     /// <summary>
     /// Adds a goal against to the country's goals against.
     /// </summary>
-    void AddGoalAgainst();
+    void AddGoalAgainst(int goals = 1);
 }
